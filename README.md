@@ -1,17 +1,14 @@
-# Título
+# Basic Netcat in Python
 
-## Explication
+<img src="assets/netcat-connection.png" alt="" style="display: block; margin: 20px auto; max-width: 80%; height: auto; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
 
-A programação de sockets é uma forma de conectar dois nós em uma rede para que se comuniquem entre si.
-Um socket (nó) escuta em uma porta específica em um endereço IP, enquanto o outro socket se comunica com o primeiro para estabelecer uma conexão.
-O servidor cria o socket de escuta, enquanto o cliente se comunica com o servidor.
+_Netcat_ é uma ferramenta ótima de linha de comando, a minha versão seria uma mais básica dela em python, ela faz apenas a conexão cliente-servidor para comunicação entre os scripts e permite comandos no outro lado como se fosse uma _reverse shell_.
 
-Um nó é qualquer dispositivo ou sistema que participa de uma rede e pode enviar, receber ou encaminhar dados, dependendo da sua função.
+## Functions
 
-Um socket é uma interface de comunicação usada por um programa para enviar e receber dados através de uma rede ou, em alguns casos, dentro do próprio computador. O socket permite que os programas participem dessa comunicação. Em uma conexão TCP, por exemplo, o cliente estabelece uma conexão com o servidor, e os dois lados podem trocar dados.
+- **Listening mode:** Ele atua como um servidor para aceitar conexões de entrada do script `client`.
+- **Client mode:** Faz a conexão no endereço do servidor utilizando a mesma porta.
 
-<https://www.geeksforgeeks.org/linux-unix/netcat-basic-usage-and-overview/>
-<https://linuxvox.com/blog/netcat-nc-command-with-examples/>
-<https://www.geeksforgeeks.org/python/python-binding-and-listening-with-sockets/>
-<https://www.geeksforgeeks.org/python/socket-programming-python/>
-<https://yasoob.me/2013/08/06/python-socket-network-programming/>
+## Details
+
+Para entender detalhadamente como o código funciona, acesse os [Detalhes](/docs/details.md).
