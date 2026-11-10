@@ -38,14 +38,13 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server:
                     print("The client closed the connection.")
                     break
 
+                ## Response
                 response = json.loads(line)
 
                 if response["exit"]:
                     print(response["exit"], end="")
                     if not response["exit"].endswith("\n"):
                         print()
-
-                print(f"[code de saída: {response['code']}]")
 
                 if command == "exit":
                     break

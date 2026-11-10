@@ -8,7 +8,8 @@ HOST = "127.0.0.1"
 PORT = 5789
 
 
-def exec(command):
+## Execute
+def execute(command):
     try:
         result = subprocess.run(
             command,
@@ -38,10 +39,12 @@ def exec(command):
         }
 
 
+## Sockets
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as client:
     client.connect((HOST, PORT))
     print("Connecting the server...")
 
+    ## Makefile
     with client.makefile("r", encoding="utf-8") as entry:
         while True:
             line = entry.readline()
@@ -50,6 +53,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as client:
                 print("The connection is closed")
                 break
 
+            ## Response
             order = json.loads(line)
             command = order["command"]
 
@@ -59,8 +63,9 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as client:
                     "code": 0,
                 }
             else:
-                response = exec(command)
+                response = execute(command)
 
+            ## Order
             message = json.dumps(response) + "\n"
             client.sendall(message.encode("utf-8"))
 
