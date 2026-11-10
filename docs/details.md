@@ -10,7 +10,7 @@ socket é uma interface de software que permite aos programas como meu script ac
 
 O `with` é utilizado para simplificar a conexão e garantindo que elas sejam fechadas com segurança mesmo que ocorram erros, ele ajuda a melhorar a legibilidade e reduzir os `try-except`. Já o `socket` na programação pode ser considerado um nó (dispositivo) que escuta em uma porta específica em um endereço IP, o server cria o `socket` de escuta e o cliente tenta se conectar à ele. Então criamos um nó com `socket` de forma simplificada com `with` dentro deles utilizamos dois parâmetros um é o `AF_INET` que se refere à família de endereços IPv4, e o outro é `SOCK_STREAM` que significa protocolo TCP orientado a conexão, isso quer dizer que vamos utilizar IPv4 e TCP como protocolo.
 
-<img src="assets/socket.png" alt="" style="display: block; margin: 20px auto; max-width: 80%; height: auto; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
+<img src="../assets/socket.png" alt="" style="display: block; margin: 20px auto; max-width: 80%; height: auto; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.3);">
 
 ## Binding
 
